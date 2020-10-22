@@ -7,9 +7,9 @@ import sys
 import logging
 
 import numpy as np
-from skimage.exposure import rescale_intensity
 from scipy.ndimage.measurements import center_of_mass, label
 from scipy.ndimage import distance_transform_edt
+from skimage.exposure import rescale_intensity
 
 from spinalcordtoolbox import resampling
 from .cnn_models import nn_architecture_seg, nn_architecture_ctr
