@@ -1,13 +1,9 @@
-import os
-import sys
-import pytest
 from tempfile import NamedTemporaryFile, TemporaryDirectory
 from textwrap import dedent
 
-from spinalcordtoolbox import __sct_dir__
-sys.path.append(os.path.join(__sct_dir__, 'scripts'))
+import pytest
 
-import sct_run_batch
+from spinalcordtoolbox.scripts import sct_run_batch
 
 
 def test_config_with_args_warning():
