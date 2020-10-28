@@ -207,8 +207,11 @@ class ExtractGLCM:
             fname_out = im_m + str(self.param_glcm.distance) + '_mean' + extension
             run_proc('sct_image -i ' + ' '.join(im2mean_lst) + ' -concat t -o ' + fname_out)
 
-            # FIXME: use API
-            run_proc('sct_maths -i ' + fname_out + ' -mean t -o ' + fname_out)
+            img = Image(fname_out)
+            dim_idx = 3 # 3 dimensions + time
+            img.data = np.mean(img.data, dim_idx)
+            img.save()
+
             self.fname_metric_lst[im_m + str(self.param_glcm.distance) + '_mean'] = fname_out
 
     def extract_slices(self):
