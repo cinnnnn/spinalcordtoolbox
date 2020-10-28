@@ -412,6 +412,7 @@ def main(args=None):
         # denoise data
         if denoise:
             printv('\nDenoise data...', verbose)
+            # FIXME: use API
             run_proc(['sct_maths', '-i', 'data_straightr.nii', '-denoise', 'h=0.05', '-o', 'data_straightr.nii'], verbose)
 
 
